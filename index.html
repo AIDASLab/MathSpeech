@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta: paper description and keywords -->
+  <meta name="description"
+        content="This is a description of the research paper.">
+  <meta name="keywords" content="Keyword1, Keyword2, Keyword3">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Paper title -->
+  <title>MathSpeech: Leveraging Small LMs for Accurate Conversion in Mathematical Speech-to-Formula</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- Gradio -->
+  <script
+	  type="module"
+	  src="https://gradio.s3-us-west-2.amazonaws.com/5.42.0/gradio.js"
+  ></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://aidas.snu.ac.kr">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        <div style="padding-left:5px;">AIDAS Lab</div>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- Paper Title -->
+          <h1 class="title is-1 publication-title">MathSpeech: Leveraging Small LMs for Accurate Conversion in Mathematical Speech-to-Formula</h1>
+
+          <!-- Conference Name and Year -->
+          <h1 class="title is-4 publication-title" style="color: #FF0066;">
+            AAAI 2025
+          </h1>
+
+          <!-- Authors and Affiliations -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/hyeonsieun">Sieun Hyeon</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://...">Kyudan Jung</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://...">Jaehee Won</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="http://...">Nam-Joon Kim</a><sup>1</sup>,</span><br>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/hyungon-ryu-12957a1a/">Hyun Gon Ryu</a><sup>4</sup>,</span>
+            <span class="author-block">
+              <a href="http://capp.snu.ac.kr/?p=people#Prof">Hyuk-Jae Lee</a><sup>1,5</sup>,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/jydo/home">Jaeyoung Do</a><sup>1,5</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Department of Electrical and Computer Engineering, Seoul National University,</span><br>
+            <span class="author-block"><sup>2</sup>Department of Mathematics, Chung-Ang University,</span><br>
+            <span class="author-block"><sup>3</sup>College of Liberal Studies, Seoul National University,</span><br>
+            <span class="author-block"><sup>4</sup>NVIDIA,</span><br>
+            <span class="author-block"><sup>5</sup>Interdisciplinary Program in Artificial Intelligence, Seoul National University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper Link. -->
+              <span class="link-block">
+                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/34595"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Arxiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2412.15655"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/hyeonsieun/MathSpeech"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/AAAI2025/MathSpeech"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- main image -->
+      <figure class="image">
+        <img src="./static/images/main1.png"
+             alt="subtitle of the main image">
+      </figure>
+      <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
+        Our pipeline that converts the lecturer’s voice into LaTeX.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="hero is-light ">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="column has-text-justified" style="padding: 0;">
+            <p>
+              In various academic and professional settings, such as mathematics lectures or research presentations, it is often necessary to convey mathematical expressions orally. However, reading mathematical expressions aloud without accompanying visuals can significantly hinder comprehension, especially for those who are hearing-impaired or rely on subtitles due to language barriers. For instance, when a presenter reads Euler's Formula, current Automatic Speech Recognition (ASR) models often produce a verbose and error-prone textual description (e.g., e to the power of i x equals cosine of x plus i `side` of x), instead of the concise LaTeX format (i.e., e^{ix} = \cos(x) + i\sin(x) ), which hampers clear understanding and communication. To address this issue, we introduce MathSpeech, a novel pipeline that integrates ASR models with small Language Models (sLMs) to correct errors in mathematical expressions and accurately convert spoken expressions into structured LaTeX representations. Evaluated on a new dataset derived from lecture recordings, MathSpeech demonstrates LaTeX generation capabilities comparable to leading commercial Large Language Models (LLMs), while leveraging fine-tuned small language models of only 120M parameters. Specifically, in terms of CER, BLEU, and ROUGE scores for LaTeX translation, MathSpeech demonstrated significantly superior capabilities compared to GPT-4o. We observed a decrease in CER from 0.390 to 0.298, and higher ROUGE/BLEU scores compared to GPT-4o.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Introduction & Motivation</strong><br>
+            - Current ASR systems struggle to accurately transcribe mathematical expressions in academic settings, resulting in verbose and error-prone outputs.<br>
+            - Also, existing ASR systems fail to convert mathematical expressions into LaTeX, making it difficult to accurately understand mathematical formulas.<br>
+          </p>
+          <p>
+            <strong>Approach</strong><br>
+            - We connected small language models to the ASR model to perform post-processing on the ASR model's text output.<br>
+            - A pipeline was created by linking two T5-small models, assigning the roles of Error Corrector and LaTeX Translator to each model.<br>
+            - Our MathSpeech architecture converts audio input of spoken mathematical formulas into LaTeX code that accurately represents the corresponding formulas.<br>
+          </p>
+          <p>
+            <strong>Outcome</strong><br>
+            - In terms of CER, BLEU, and ROUGE scores for LaTeX translation, MathSpeech demonstrated significantly superior capabilities compared to GPT-4o.<br>
+          </p>
+        </div>
+      </div>
+</section>
+
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Methodology : Error Corrector</h2>
+        <div class="content has-text-justified">
+          <p>
+            - The Error Corrector is responsible for correcting errors in the audio transcription text output by the ASR model.<br>
+            - To train the Error Corrector, we generated audio using TTS and collected errors produced by the ASR model.<br>
+          </p>
+        </div>
+        <!-- Diagram or Illustration of Method -->
+        <figure class="image">
+          <img src="./static/images/error_corrector.png" style="max-width:120%;margin-right:auto;margin: 10px auto 0 auto;"
+               alt="Diagram illustrating the method used in the research">
+        </figure>
+      </div>
+</section>
+
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Methodology : LaTeX Translator & End-to-End training</h2>
+        <div class="content has-text-justified">
+          <p>
+            - The LaTeX Translator converts spoken English that describes mathematical expressions into LaTeX code.<br>
+            - To generate the final accurate LaTeX output, we assigned a higher weight to the output of the LaTeX Translator compared to the output of the Error Corrector during end-to-end training.<br>
+          </p>
+        </div>
+        <!-- Diagram or Illustration of Method -->
+        <figure class="image">
+          <img src="./static/images/e2e_training.png" style="max-width:120%;margin-right:auto;margin: 10px auto 0 auto;"
+               alt="Diagram illustrating the method used in the research">
+        </figure>
+      </div>
+</section>
+
+
+<!-- Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experiment Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            For model evaluation, we extracted audio from real mathematics lectures on YouTube and manually labeled it to build a benchmark dataset. 
+          </p>
+        </div>
+        <!-- Diagram or Illustration of Method -->
+        <figure class="image">
+          <img src="./static/images/exp-1.png" style="max-width:120%;margin-right:auto;margin: 10px auto 0 auto;"
+               alt="Diagram illustrating the method used in the research">
+        </figure>
+        <figure class="image">
+          <img src="./static/images/exp-2.png" style="max-width:60%;margin-right:auto;margin: 10px auto 0 auto;"
+               alt="Diagram illustrating the method used in the research">
+        </figure>
+      </div>
+</section>
+
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{HyeonAAAI25, 
+      title={MathSpeech: Leveraging Small LMs for Accurate Conversion in Mathematical Speech-to-Formula}, 
+      volume={39}, 
+      url={https://ojs.aaai.org/index.php/AAAI/article/view/34595}, 
+      DOI={10.1609/aaai.v39i23.34595}, 
+      number={23}, 
+      journal={Proceedings of the AAAI Conference on Artificial Intelligence}, 
+      author={Hyeon, Sieun and Jung, Kyudan and Won, Jaehee and Kim, Nam-Joon and Ryu, Hyun Gon and Lee, Hyuk-Jae and Do, Jaeyoung}, 
+      year={2025}, 
+      month={Apr.}, 
+      pages={24194-24202} 
+}</code></pre>
+  </div>
+</section>
+
+<!-- Footer (Don't change) -->
+<footer class="footer" style="padding-bottom: 40px;">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <a href="https://en.snu.ac.kr">
+            <img src="./static/images/snu_logo.png" alt="Logo" style="max-height: 48px; margin: 6px 10px;">
+          </a>
+          <a href="https://aidas.snu.ac.kr">
+            <img src="./static/images/aidaslab_logo.png" alt="Logo" style="max-height: 36px; margin: 10px 30px;">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
