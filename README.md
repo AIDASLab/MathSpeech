@@ -125,7 +125,7 @@ You can find the code used in our Ablation Study at the following [link](https:/
 ## How to Use
 1. Clone this repository using the web URL.
 ```bash
-git clone https://github.com/hyeonsieun/MathSpeech.git
+git clone https://github.com/AIDASLab/MathSpeech.git
 ```
 2. To build the environment, run the following code
 ```bash
