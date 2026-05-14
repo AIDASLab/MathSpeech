@@ -1,4 +1,11 @@
 # MathSpeech: Leveraging Small LMs for Accurate Conversion in Mathematical Speech-to-Formula
+<h3 align="center">AAAI 2025 Main Technical Track</h3>
+<p align="center">
+  <a href="https://ojs.aaai.org/index.php/AAAI/article/view/34595"><img src="https://img.shields.io/badge/arXiv-2602.09642-b31b1b.svg" alt="arXiv"></a>
+  <a href="https://aidaslab.github.io/MathSpeech/"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
+  <a href="https://huggingface.co/datasets/AAAI2025/MathSpeech"><img src="https://img.shields.io/badge/Training_Data-Google_Drive-34A853.svg" alt="Training Data"></a>
+</p>
+
 
 ## Abstract
 In various academic and professional settings, such as mathematics lectures or research presentations, it is often necessary to convey mathematical expressions orally. However, reading mathematical expressions aloud without accompanying visuals can significantly hinder comprehension, especially for those who are hearing-impaired or rely on subtitles due to language barriers. For instance, when a presenter reads Euler's Formula, current Automatic Speech Recognition (ASR) models often produce a verbose and error-prone textual description (e.g., e to the power of i x equals cosine of x plus i $\textit{side}$ of x), instead of the concise LaTeX format (i.e., $e^{ix} = \cos(x) + i\sin(x)$), which hampers clear understanding and communication. To address this issue, we introduce MathSpeech, a novel pipeline that integrates ASR models with small Language Models (sLMs) to correct errors in mathematical expressions and accurately convert spoken expressions into structured LaTeX representations. Evaluated on a new dataset derived from lecture recordings, MathSpeech demonstrates LaTeX generation capabilities comparable to leading commercial Large Language Models (LLMs), while leveraging fine-tuned small language models of only 120M parameters.
