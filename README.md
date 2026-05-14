@@ -1,5 +1,5 @@
 # MathSpeech: Leveraging Small LMs for Accurate Conversion in Mathematical Speech-to-Formula
-<h3 align="center">AAAI 2025 Main Technical Track</h3>
+<h3 align="center">AAAI 2025</h3>
 <p align="center">
   <a href="https://arxiv.org/abs/2412.15655"><img src="https://img.shields.io/badge/arXiv-2602.09642-b31b1b.svg" alt="arXiv"></a>
   <a href="https://aidaslab.github.io/MathSpeech/"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
@@ -152,3 +152,22 @@ python MathSpeech_eval.py
 9. You can also run the Ablation Study code from the Ablation_Study folder.
 
 **Notes:** Here, example code for performing ASR using whisper-base and whisper-small is provided. If you want to use a different ASR model, you can modify that part of the code to use our MathSpeech.
+
+
+
+## Citation
+
+```bibtex
+@article{HyeonAAAI25, 
+      title={MathSpeech: Leveraging Small LMs for Accurate Conversion in Mathematical Speech-to-Formula}, 
+      volume={39}, 
+      url={https://ojs.aaai.org/index.php/AAAI/article/view/34595}, 
+      DOI={10.1609/aaai.v39i23.34595}, 
+      number={23}, 
+      journal={Proceedings of the AAAI Conference on Artificial Intelligence}, 
+      author={Hyeon, Sieun and Jung, Kyudan and Won, Jaehee and Kim, Nam-Joon and Ryu, Hyun Gon and Lee, Hyuk-Jae and Do, Jaeyoung}, 
+      year={2025}, 
+      month={Apr.}, 
+      pages={24194-24202} 
+}
+```
