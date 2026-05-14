@@ -1,7 +1,7 @@
 # MathSpeech: Leveraging Small LMs for Accurate Conversion in Mathematical Speech-to-Formula
 <h3 align="center">AAAI 2025</h3>
 <p align="center">
-  <a href="https://arxiv.org/abs/2412.15655"><img src="https://img.shields.io/badge/arXiv-2602.09642-b31b1b.svg" alt="arXiv"></a>
+  <a href="https://arxiv.org/abs/2412.15655"><img src="https://img.shields.io/badge/arXiv-2412.15655-b31b1b.svg" alt="arXiv"></a>
   <a href="https://aidaslab.github.io/MathSpeech/"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
 </p>
 
