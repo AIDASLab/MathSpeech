@@ -3,7 +3,6 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2412.15655"><img src="https://img.shields.io/badge/arXiv-2602.09642-b31b1b.svg" alt="arXiv"></a>
   <a href="https://aidaslab.github.io/MathSpeech/"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
-  <a href="https://huggingface.co/datasets/AAAI2025/MathSpeech"><img src="https://img.shields.io/badge/Training_Data-Google_Drive-34A853.svg" alt="Training Data"></a>
 </p>
 
 
